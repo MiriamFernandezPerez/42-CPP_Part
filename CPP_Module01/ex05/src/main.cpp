@@ -2,15 +2,15 @@
 
 int main()
 {
-    Harl h;
+    Harl harl;
 
     // Check complaints at different levels
-    h.complain("DEBUG");
-    h.complain("INFO");
-    h.complain("WARNING");
-    h.complain("ERROR");
+    harl.complain("DEBUG");
+    harl.complain("INFO");
+    harl.complain("WARNING");
+    harl.complain("ERROR");
     // To see what happens if an invalid level is passed
-    h.complain("INVALID"); 
+    harl.complain("INVALID"); 
 
-    return 0;
+    return (0);
 }

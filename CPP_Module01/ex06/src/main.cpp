@@ -1,4 +1,4 @@
-#include "../inc/harlFilter.hpp"
+#include "../inc/HarlFilter.hpp"
 
 int getLevelCode(const std::string& level)
 {
@@ -12,7 +12,7 @@ int getLevelCode(const std::string& level)
 
 int main(int ac, char **av)
 {
-    harlFilter harl;
+    HarlFilter harl;
    
     if (ac != 2)
     {
@@ -24,16 +24,13 @@ int main(int ac, char **av)
     // Check complaints at different levels
         switch (getLevelCode(level)) {
         case 0:
-            harl.complain(av[1]);
-            break;
+            harl.complain("DEBUG");
         case 1:
-            harl.complain(av[1]);
-            break;
+            harl.complain("INFO");
         case 2:
-            harl.complain(av[1]);
-            break;
+            harl.complain("WARNING");
         case 3:
-            harl.complain(av[1]);
+            harl.complain("ERROR");
             break;
         default:
             std::cout << "[  Probably complaining about insignificant problems ]" << std::endl;

@@ -23,11 +23,11 @@ int main()
 }
 
 
-// Referecoas
-// ¿Cuándo usar string&?
-// ✔ Cuando quieres modificar una variable original en una función.
-// ✔ Cuando quieres evitar copiar variables grandes.
-// ✔ Cuando quieres mayor legibilidad y seguridad que con punteros.
+// References
+// ¿When I should use string& (by reference)?
+// ✔ If I want to modify an original variable in a function.
+// ✔ If I don't want to copy a big variable.
+// ✔ To get better Cuando quieres mayor legibilidad y seguridad que con punteros.
 
 // 1. Pasar parámetros a funciones sin copiar
 // Cuando pasas una variable grande (como un std::string o un objeto), copiarla cuesta memoria y tiempo. Con una referencia, puedes evitar esa copia y modificar el original si quieres.

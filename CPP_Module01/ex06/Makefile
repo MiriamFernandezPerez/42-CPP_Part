@@ -1,10 +1,10 @@
 CC = g++
 
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address -fsanitize=leak
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address -fsanitize=leak -Wno-implicit-fallthrough
 LDFLAGS = -fsanitize=address 
 INC = -I./inc
 
-SRC = src/main.cpp src/harlFilter.cpp
+SRC = src/main.cpp src/HarlFilter.cpp
 OBJ = $(SRC:.cpp=.o)
 
 NAME = harlFilter

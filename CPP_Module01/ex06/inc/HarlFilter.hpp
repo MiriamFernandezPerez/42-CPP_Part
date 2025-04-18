@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-class harlFilter
+class HarlFilter
 {
     private:
         void debug(void);

@@ -1,4 +1,4 @@
-CC = g++
+CC = c++
 
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address -fsanitize=leak
 LDFLAGS = -fsanitize=address 
@@ -9,12 +9,12 @@ OBJ = $(SRC:.cpp=.o)
 
 NAME = violence
 
-all: $(NAME)
+all: $(NAME) Makefile
 
-$(NAME): $(OBJ)
+$(NAME): $(OBJ) Makefile
 	$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME) $(LDFLAGS)
 
-src/%.o: src/%.cpp
+src/%.o: src/%.cpp Makefile
 	$(CC) $(CPPFLAGS) $(INC) -c $< -o $@
 
 clean:
@@ -26,3 +26,5 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re
+
+

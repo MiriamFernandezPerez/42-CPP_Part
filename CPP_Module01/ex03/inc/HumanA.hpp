@@ -10,7 +10,7 @@ class HumanA
         std::string name;
         Weapon& weapon;
     public:
-        //Arguments a Refenence name and a reference weapon, HumanA always is armed
+        //Arguments: a Refernence name and a reference weapon, HumanA always is armed
         HumanA(const std::string& name, Weapon& weapon);
         //Method to attack
         void attack() const;

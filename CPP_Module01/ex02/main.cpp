@@ -23,14 +23,35 @@ int main()
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // References
 // ¿When I should use string& (by reference)?
 // ✔ If I want to modify an original variable in a function.
 // ✔ If I don't want to copy a big variable.
-// ✔ To get better Cuando quieres mayor legibilidad y seguridad que con punteros.
+// ✔ When you want greater readability and security than with pointers.
 
-// 1. Pasar parámetros a funciones sin copiar
-// Cuando pasas una variable grande (como un std::string o un objeto), copiarla cuesta memoria y tiempo. Con una referencia, puedes evitar esa copia y modificar el original si quieres.
+// 1. Passing parameters to functions without copying
+// When you pass a large variable (such as a std::string or an
+// object), copying it costs memory and time. With a reference,
+//you can avoid that copy and modify the original if you want.
 // void toUpperCase(std::string& text) {
 //     for (char& c : text)
 //         c = toupper(c);
@@ -41,28 +62,26 @@ int main()
 //     toUpperCase(message);
 //     std::cout << message; // HELLO
 // }
-// Si hubiéramos usado std::string text, la función trabajaría con una copia.
+// If we had used std::string text, the function would work with a copy.
 
-// Con std::string& text, trabajamos directamente sobre la original.
+// With std::string& text, we work directly on the original.
 
+// 2. Passing variables as read-only without copying (const references)
+// If you don't want the value to be modified, but still want to avoid copying it, use const std::string&.
 
-// 2. Pasar variables como solo lectura sin copiar (const references)
-// Si no quieres que se modifique el valor, pero igual quieres evitar copiarlo, usas const std::string&.
-
-// Caso real: función que solo lee un string
+// Real-life case: function that only reads a string
 
 // void printGreeting(const std::string& name) {
 //     std::cout << "Hello, " << name << "!" << std::endl;
 // }
 
-// Es más eficiente que pasar std::string name, porque no se copia.
-// Es más seguro que pasar std::string&, porque no se puede modificar.
+// It's more efficient than passing std::string name because it's not copied.
+// It's safer than passing std::string& because it can't be modified.
 
+// 3. Returning references from functions
+// When you want a function to return a reference to an existing variable, not a copy.
 
-// 3. Devolver referencias desde funciones
-// Cuando quieres que una función devuelva una referencia a una variable ya existente, no una copia.
-
-// Caso real: acceder a un elemento y modificarlo
+// Real-life scenario: accessing and modifying an element
 
 // std::string& getElement(std::vector<std::string>& list, int index) {
 //     return list[index]; // Devuelve una referencia al string dentro del vector
@@ -75,8 +94,8 @@ int main()
 // }
 
 
-// 4. Evitar punteros en general
-// Las referencias te permiten evitar muchos errores de punteros: null, *ptr, &var, etc.
+// 4. Avoid pointers in general
+// References allow you to avoid many pointer errors: null, *ptr, &var, etc.
 
 // void updateValue(int& x) {
 //     x += 10;
@@ -84,8 +103,8 @@ int main()
 
 // int main() {
 //     int a = 5;
-//     updateValue(a); // a es ahora 15
+//     updateValue(a); // Now is 15
 // }
 
-// No necesitas preocuparte de nullptr, ni de * y &.
-// Es más seguro y más legible.
+// don't care about: nullptr, ni de * y &.
+// Safer and eadable

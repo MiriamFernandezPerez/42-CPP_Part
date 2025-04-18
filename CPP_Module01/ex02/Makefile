@@ -1,4 +1,4 @@
-CC = g++
+CC = c++
 
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address -fsanitize=leak
 
@@ -17,7 +17,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CC) $(OBJ) -o $(NAME) $(LDFLAGS)
 
-src/%.o: src/%.cpp inc/Zombie.hpp
+%.o: %.cpp Makefile
 	$(CC) $(CPPFLAGS) $(INC) -c $< -o $@
 
 clean:

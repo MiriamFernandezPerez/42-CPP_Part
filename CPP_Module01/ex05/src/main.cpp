@@ -3,14 +3,18 @@
 int main()
 {
     Harl harl;
-
-    // Check complaints at different levels
+ 
+	std::cout << "DEBUG: " << std::endl;
     harl.complain("DEBUG");
+	
+	std::cout << "INFO: " << std::endl;
     harl.complain("INFO");
+	
+	std::cout << "WARNING: " << std::endl;
     harl.complain("WARNING");
-    harl.complain("ERROR");
-    // To see what happens if an invalid level is passed
-    harl.complain("INVALID"); 
+	
+	std::cout << "ERROR: " << std::endl;
+	harl.complain("ERROR");
 
     return (0);
 }

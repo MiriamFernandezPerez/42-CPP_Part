@@ -1,5 +1,13 @@
 #include "../inc/Harl.hpp"
 
+Harl::Harl()
+{
+	complaints[0] = &Harl::debug;
+	complaints[1] = &Harl::info;
+	complaints[2] = &Harl::warning;
+	complaints[3] = &Harl::error;
+}
+
 void Harl::debug(void)
 {
     std::cout << "I love having extra bacon for my 7XL-double-cheese-triple-pickle-specialketchup burger. I really do!" << std::endl;
@@ -20,21 +28,22 @@ void Harl::error(void)
     std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
 }
 
+void Harl::unknown(void)
+{
+	std::cout << "Unkown level!" << std::endl;
+}
+
 void Harl::complain(std::string level)
 {
     // Array of pointers to members
-    void (Harl::*complaints[])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
     std::string levels[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
     
     // Check level index 
-    for (int i = 0; i < 4; i++)
-    {
-        if (level == levels[i])
-        {
-            (this->*complaints[i])();
-            return ;
-        }
-    }
-    // If level doesn't exit, msg by default
-    std::cout << "Unknown level!" << std::endl;
+    int index = 0;
+
+	while (index < 3 && levels[index] != level)
+		index++;
+    
+	(this->*complaints[index])();
+
 }

@@ -5,7 +5,7 @@
 #include <string>
 #include <iomanip>
 
-class   Contact
+class Contact
 {
     private:
         std::string firstName;
@@ -16,12 +16,11 @@ class   Contact
 
     public:
         // Constructor
-        Contact(std::string fName, std::string lName, std::string nName, std::string pNumber, std::string dSecret)
-            : firstName(fName), lastName(lName), nickName(nName), phoneNumber(pNumber), darkestSecret(dSecret) {}
+        Contact(std::string fName, std::string lName, std::string nName, std::string pNumber, std::string dSecret);
 
         // Methods to show contact info
-        void    showContact() const;
-        void    showSummary() const;
+        void showContact() const;
+        void showSummary() const;
 };
 
 #endif

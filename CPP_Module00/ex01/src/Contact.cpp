@@ -1,5 +1,9 @@
 #include "../inc/Contact.hpp"
 
+//Constructor init
+Contact::Contact(std::string fName, std::string lName, std::string nName, std::string pNumber, std::string dSecret)
+            : firstName(fName), lastName(lName), nickName(nName), phoneNumber(pNumber), darkestSecret(dSecret) {}
+
 // Show all the details of the Contact
 void Contact::showContact() const
 {

@@ -1,7 +1,7 @@
 CC = g++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 INC = -I./inc
-SRC = src/main.cpp src/Contact.cpp src/Phonebook.cpp src/Utils.cpp
+SRC = src/main.cpp src/Contact.cpp src/Phonebook.cpp
 OBJ = $(SRC:.cpp=.o)
 
 NAME = phonebook
@@ -21,3 +21,4 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean $(NAME)
+

@@ -1,9 +1,10 @@
 #include "../inc/Phonebook.hpp"
 #include "../inc/Contact.hpp"
-
 #include <iostream>
 #include <string>
-#include <sstream>
+
+//Constructor init
+PhoneBook::PhoneBook() : contactCount(0) {}
 
 // Destructor: clean memory (not required by recommended)
 PhoneBook::~PhoneBook()
@@ -81,6 +82,36 @@ bool PhoneBook::getInput(std::string& input, const std::string& prompt) const
     }
 }
 
+// Metohd to add a new contact with input validation
+bool PhoneBook::addNewContact()
+{
+    std::string firstName, lastName, nickName, phoneNumber, darkestSecret;
+
+    // Call to getInput in every prompt to check no empty fields
+    if (!getInput(firstName, "Name: ")) return false;
+    if (!getInput(lastName, "Last Name: ")) return false;
+    if (!getInput(nickName, "Nickname: ")) return false;
+
+    // Phone number validation
+    while (true)
+    {
+        if (!getInput(phoneNumber, "Phone: ")) return false;
+        if (!isPhoneNumberValid(phoneNumber))
+            std::cout << "Invalid phone number. It must be 9 digits. Please enter again." << std::endl;
+        else
+            break ;
+    }
+
+    if (!getInput(darkestSecret, "Darkest secret: ")) return false;
+
+    // Create a new contact with all verified values
+    Contact* newContact = new Contact(firstName, lastName, nickName, phoneNumber, darkestSecret);
+    // Add new contact to phonebook
+    addContact(newContact);
+    std::cout << "Contact added successfully!" << std::endl;
+    return (true);
+}
+
 // Method to add a contact into array
 void PhoneBook::addContact(Contact* contact)
 {
@@ -101,28 +132,4 @@ void PhoneBook::addContact(Contact* contact)
         // Add contact in right position
         contacts[replaceIndex] = contact;
     }
-}
-
-int PhoneBook::getIndexInput() const
-{
-    // Invalid value by default to initialize
-    int index = -1;  
-    // Declare input like a string
-    std::string indexInput;
-    // Read the input
-    std::getline(std::cin, indexInput);
-
-    // If input is empty, write error and ask again for the index
-    if (indexInput.empty())
-        std::cout << "Error: You must enter a valid index." << std::endl;
-
-    // Convert the input into a number using std::stringstream into index variable
-    
-    std::stringstream ss(indexInput);
-    ss >> index;
-
-    // Verify if index is in range, if it's not ask again for the index
-    if (index <= 0 || index > this->getContactCount())
-        std::cout << "Error: Index out of range." << std::endl;
-    return (index);
 }

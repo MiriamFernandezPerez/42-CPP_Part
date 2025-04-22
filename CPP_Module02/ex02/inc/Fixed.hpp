@@ -41,9 +41,35 @@ class Fixed
         // Convert the fixed value to an integer (divide by 256 without decimals)
         int toInt() const;
 
+		//Compatarion operators
+		bool	operator>(const Fixed &other) const;
+		bool	operator<(const Fixed &other) const;
+		bool	operator>=(const Fixed &other) const;
+		bool	operator<=(const Fixed &other) const;
+		bool	operator==(const Fixed &other) const;
+		bool	operator!=(const Fixed &other) const;
+
+		//Aritmetic operators
+		Fixed	operator+(const Fixed &other) const;
+		Fixed	operator-(const Fixed &other) const;
+		Fixed	operator*(const Fixed &other) const;
+		Fixed	operator/(const Fixed &other) const;
+
+		//Increment and decrement operators
+		Fixed&	operator++();
+		Fixed	operator++(int);
+		Fixed&	operator--();
+		Fixed	operator--(int);
+
+		//Statics member functions min & max
+		static Fixed& min(Fixed &a, Fixed &b);
+		static const Fixed& min(const Fixed &a, const Fixed &b);
+		static Fixed& max(Fixed &a, Fixed &b);
+		static const Fixed& max(const Fixed &a, const Fixed &b);
+
 };
 
 // Overloading the << operator to display the number as a float
-std::ostream &operator<<(std::ostream &out, Fixed const &value);
+std::ostream &operator<<(std::ostream &out, const Fixed &value);
 
 #endif

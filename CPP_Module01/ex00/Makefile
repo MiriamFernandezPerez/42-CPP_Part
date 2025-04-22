@@ -6,7 +6,7 @@ LDFLAGS = -fsanitize=address
 
 INC = -I./inc
 
-SRC = src/main.cpp src/newZombie.cpp src/randomChump.cpp src/Zombie.cpp 
+SRC = src/main.cpp src/NewZombie.cpp src/RandomChump.cpp src/Zombie.cpp 
 
 OBJ = $(SRC:.cpp=.o)
 

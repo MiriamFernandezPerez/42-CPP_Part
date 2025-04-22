@@ -4,10 +4,10 @@ CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address -fsanitize=leak
 LDFLAGS = -fsanitize=address 
 INC = -I./inc
 
-SRC = src/main.cpp src/Fixed.cpp
+SRC = src/main.cpp src/ClapTrap.cpp
 OBJ = $(SRC:.cpp=.o)
 
-NAME = fixed
+NAME = claptrap
 
 all: $(NAME)
 

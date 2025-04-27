@@ -6,7 +6,7 @@ LDFLAGS = -fsanitize=address
 
 INC = -I./inc
 
-SRC = src/main.cpp src/Animal.cpp src/Dog.cpp src/Cat.cpp src/WrongAnimal.cpp src/WrongCat.cpp
+SRC = src/main.cpp src/Animal.cpp src/Dog.cpp src/Cat.cpp src/WrongAnimal.cpp src/WrongCat.cpp src/Brain.cpp
 
 OBJ = $(SRC:.cpp=.o)
 

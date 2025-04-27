@@ -12,21 +12,21 @@ class Animal
 		//Default constructor
 		Animal();
 
-		//Copy constuctor
+		//Copy constructor
 		Animal(const Animal &other);
 
-		//Copy assignment constructor
+		//Copy assigment constructor
 		Animal& operator=(const Animal &other);
 
 		//Destructor
 		virtual ~Animal();
-
+	
 		//Setters & getters
 		void		setType(const std::string &type);
 		std::string	getType() const;
 
 		//Method
-		virtual void makeSound();
+		virtual void makeSound() const = 0;
 };
 
 #endif

@@ -12,11 +12,6 @@ WrongAnimal::WrongAnimal(const WrongAnimal &other)
 	*this = other;
 }
 
-WrongAnimal::~WrongAnimal()
-{
-	std::cout << "WrongAnimal destructor called" << std::endl;
-}
-
 WrongAnimal& WrongAnimal::operator=(const WrongAnimal &other)
 {
 	if (this != &other)
@@ -25,6 +20,12 @@ WrongAnimal& WrongAnimal::operator=(const WrongAnimal &other)
 	}
 	return (*this);
 }
+
+WrongAnimal::~WrongAnimal()
+{
+	std::cout << "WrongAnimal destructor called" << std::endl;
+}
+
 
 void	WrongAnimal::setType(const std::string &type)
 {

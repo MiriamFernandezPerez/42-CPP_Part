@@ -13,11 +13,6 @@ WrongCat::WrongCat(const WrongCat &other) : WrongAnimal()
 	*this = other;
 }
 
-WrongCat::~WrongCat()
-{
-	std::cout << "WrongCat destructor called" << std::endl;
-}
-
 WrongCat& WrongCat::operator=(const WrongCat &other)
 {
 	if (this != &other)
@@ -27,7 +22,12 @@ WrongCat& WrongCat::operator=(const WrongCat &other)
 	return (*this);
 }
 
+WrongCat::~WrongCat()
+{
+	std::cout << "WrongCat destructor called" << std::endl;
+}
+
 void	WrongCat::makeSound()
 {
-	std::cout << "Megrgrow Megrgrgow!! " << std::endl;
+	std::cout << "Megrgrow Megrgrow!!" << std::endl;
 }

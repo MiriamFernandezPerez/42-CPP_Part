@@ -12,15 +12,15 @@ class WrongAnimal
 		//Default constructor
 		WrongAnimal();
 
-		//Copy constuctor
+		//Copy constructor
 		WrongAnimal(const WrongAnimal &other);
-
-		//Copy assignment constructor
-		WrongAnimal& operator=(const WrongAnimal &other);
 
 		//Destructor
 		virtual ~WrongAnimal();
-	
+
+		//Copy assigment constructor
+		WrongAnimal& operator=(const WrongAnimal &other);
+
 		//Setters & getters
 		void		setType(const std::string &type);
 		std::string	getType() const;

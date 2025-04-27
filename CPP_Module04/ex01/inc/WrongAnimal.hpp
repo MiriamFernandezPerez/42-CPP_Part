@@ -12,7 +12,7 @@ class WrongAnimal
 		//Default constructor
 		WrongAnimal();
 
-		//Copy constuctor
+		//Copy constructor
 		WrongAnimal(const WrongAnimal &other);
 
 		//Copy assignment constructor
@@ -20,7 +20,7 @@ class WrongAnimal
 
 		//Destructor
 		virtual ~WrongAnimal();
-	
+
 		//Setters & getters
 		void		setType(const std::string &type);
 		std::string	getType() const;

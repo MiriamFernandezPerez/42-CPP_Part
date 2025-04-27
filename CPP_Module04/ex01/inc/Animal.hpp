@@ -1,32 +1,32 @@
-#ifndef WRONGANIMAL_HPP
-# define WRONGANIMAL_HPP
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
 
 # include <string>
 
-class WrongAnimal
+class Animal
 {
 	protected:
 		std::string type;
 	
 	public:
 		//Default constructor
-		WrongAnimal();
+		Animal();
 
-		//Copy constuctor
-		WrongAnimal(const WrongAnimal &other);
-
+		//Copy constructor
+		Animal(const Animal &other);
+		
 		//Copy assignment constructor
-		WrongAnimal& operator=(const WrongAnimal &other);
+		Animal& operator=(const Animal &other);
 
 		//Destructor
-		virtual ~WrongAnimal();
-	
+		virtual ~Animal();
+
 		//Setters & getters
 		void		setType(const std::string &type);
 		std::string	getType() const;
 
 		//Method
-		void makeSound();
+		virtual void makeSound();
 };
 
 #endif

@@ -10,14 +10,14 @@ class WrongCat : public WrongAnimal
 		//Default constructor
 		WrongCat();
 
-		//Copy constuctor
+		//Copy constructor
 		WrongCat(const WrongCat &other);
-		
-		//Copy assignment constructor
-		WrongCat& operator=(const WrongCat &other);
 
 		//Destructor
 		~WrongCat();
+
+		//Copy assignment constructor
+		WrongCat& operator=(const WrongCat &other);
 
 		//Method
 		void	makeSound();

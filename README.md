@@ -1,4 +1,4 @@
-# 📚 Proyecto 42 
+# 📚 CPP_Part1 
 ## *CPP Modules*
 
 Este repositorio contiene una colección de módulos educativos en C++ diseñados para enseñar programación orientada a objetos de forma progresiva. Todos los módulos siguen el estándar **C++98** y ofrecen ejemplos prácticos para entender conceptos clave como herencia, polimorfismo y punteros a funciones.
